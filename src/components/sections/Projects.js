@@ -6,19 +6,26 @@ export const Projects = () => {
       title: "Cryptocurrency Finance Price Tracker App",
       description:
         "Developed a dynamic cryptocurrency tracker in React.js with live price updates and search functionality, providing real-time market data on page load.",
-      tech: ["React.js", "ECMAScript 6", "CSS"],
+      tech: ["React.js", "JavaScript", "ECMAScript 6", "CSS"],
     },
     {
       title: "E-Commerce Cart",
       description:
         "Developed an advanced e-commerce cart using React.js and Redux with seamless add/remove functionality and robust cart management for enhanced user experience.",
-      tech: ["React.js", "Redux.js", "ECMAScript 6", "CSS"],
+      tech: ["React.js", "Redux.js", "ECMAScript 6", "JavaScript", "CSS"],
     },
     {
-      title: "E-Commerce Web App",
+      title: "CRUD Operation Application",
       description:
-        "Full-stack e-commerce with modern UI, secure payment integration, and customizable product inventory.",
-      tech: ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
+        "Developed a full-stack CRUD application using React.js, Node.js, Express.js, and MongoDB, with RESTful APIs for seamless data management and dynamic user interaction.",
+      tech: [
+        "React.js",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "ECMAScript 6",
+        "JavaScript",
+      ],
     },
     {
       title: "Real-Time Chat App",
