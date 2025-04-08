@@ -89,3 +89,44 @@
     font-size: 0.9rem;
   }
 }
+
+/* Social Icons */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.social-icon {
+  font-size: 32px;
+  color: #333;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon-link:hover .social-icon {
+  transform: scale(1.15);
+  color: #007bff;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .contact-heading {
+    font-size: 1.8rem;
+  }
+
+  .input,
+  .textarea {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .submit-button {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .social-icon {
+    font-size: 28px;
+  }
+}

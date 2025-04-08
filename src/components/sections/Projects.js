@@ -5,14 +5,14 @@ export const Projects = () => {
     {
       title: "Cryptocurrency Finance Price Tracker App",
       description:
-        "Scalable cloud infrastructure management with real-time monitoring and automated scaling.",
-      tech: ["React", "Node.js", "AWS", "Docker"],
+        "Developed a dynamic cryptocurrency tracker in React.js with live price updates and search functionality, providing real-time market data on page load.",
+      tech: ["React.js", "ECMAScript 6", "CSS"],
     },
     {
-      title: "AI Analytics Dashboard",
+      title: "E-Commerce Cart",
       description:
-        "ML-powered data visualization platform with predictive analytics and interactive reports.",
-      tech: ["Python", "TensorFlow", "D3.js", "Flask"],
+        "Developed an advanced e-commerce cart using React.js and Redux with seamless add/remove functionality and robust cart management for enhanced user experience.",
+      tech: ["React.js", "Redux.js", "ECMAScript 6", "CSS"],
     },
     {
       title: "E-Commerce Web App",
