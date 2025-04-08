@@ -1,5 +1,5 @@
-// import { RevealOnScroll } from "../RevealOnScroll";
 import "../../css/Projects.css";
+import { RevealOnScroll } from "../RevealOnScroll";
 export const Projects = () => {
   const projectData = [
     {
@@ -30,29 +30,29 @@ export const Projects = () => {
 
   return (
     <section id="projects" className="projects-section">
-      {/* <RevealOnScroll> */}
-      <div className="projects-container">
-        <h2 className="projects-title">Featured Projects</h2>
-        <div className="projects-grid">
-          {projectData.map((project, index) => (
-            <div key={index} className="project-card">
-              <h3 className="project-title">{project.title}</h3>
-              <p className="project-desc">{project.description}</p>
-              <div className="project-tech">
-                {project.tech.map((tech, idx) => (
-                  <span key={idx} className="tech-badge">
-                    {tech}
-                  </span>
-                ))}
+      <RevealOnScroll>
+        <div className="projects-container">
+          <h2 className="projects-title">Featured Projects</h2>
+          <div className="projects-grid">
+            {projectData.map((project, index) => (
+              <div key={index} className="project-card">
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-desc">{project.description}</p>
+                <div className="project-tech">
+                  {project.tech.map((tech, idx) => (
+                    <span key={idx} className="tech-badge">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <a href="#" className="project-link">
+                  View Project →
+                </a>
               </div>
-              <a href="#" className="project-link">
-                View Project →
-              </a>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-      {/* </RevealOnScroll> */}
+      </RevealOnScroll>
     </section>
   );
 };
