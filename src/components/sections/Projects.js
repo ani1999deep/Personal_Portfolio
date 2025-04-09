@@ -70,7 +70,7 @@ import { RevealOnScroll } from "../RevealOnScroll";
 export const Projects = () => {
   const projectData = [
     {
-      title: "Cryptocurrency Finance Price Tracker App",
+      title: "Cryptocurrency Finance Price Tracker Web App",
       description:
         "Developed a dynamic cryptocurrency tracker in React.js with live price updates and search functionality, providing real-time market data on page load.",
       tech: ["React.js", "JavaScript", "ECMAScript 6", "CSS"],
