@@ -28,10 +28,10 @@ export const Projects = () => {
       ],
     },
     {
-      title: "Real-Time Chat App",
+      title: "Pokemon Explorer Web App",
       description:
-        "Scalable chat platform supporting real-time messaging, presence, and group chat features.",
-      tech: ["Socket.IO", "Express", "React", "Redis"],
+        "A responsive and visually appealing React.js web app for exploring Pokemons using the PokeAPI.It includes a homepage with search functionality and a detailed view for each Pokemon.",
+      tech: ["React.js", "JavaScript", "ECMAScript 6", "CSS"],
     },
   ];
 
