@@ -8,9 +8,13 @@ export const Home = () => {
           <h1 className="home-title">Hi, I'm Anideep Bhowmick</h1>
 
           <p className="home-description">
-            I’m a full-stack developer who loves crafting clean, scalable web
-            applications. My goal is to build solutions that offer both
-            exceptional performance and a delightful user experience.
+            I am a full-stack developer with a background in Electronics and
+            Instrumentation Engineering and experience in industrial automation.
+            My expertise combines system-level problem-solving with modern web
+            technologies. I focus on building clean, scalable applications that
+            deliver exceptional performance and user experience. Whether backend
+            or frontend, I create high-performance solutions that bridge
+            industrial systems and software development.
           </p>
 
           <div className="home-buttons">
