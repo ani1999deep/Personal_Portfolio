@@ -1,7 +1,43 @@
 import "../../css/Projects.css";
 import { RevealOnScroll } from "../RevealOnScroll";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Tilt from "react-parallax-tilt";
+import Lottie from "lottie-react";
+import codingAnimation from "../../assets/projects.json";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const Projects = () => {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const cards = sectionRef.current.querySelectorAll(".project-card");
+
+    gsap.fromTo(
+      cards,
+      {
+        opacity: 0,
+        y: 50,
+        rotateX: 45,
+        transformPerspective: 1000,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        rotateX: 0,
+        duration: 1.2,
+        stagger: 0.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+        },
+      }
+    );
+  }, []);
+
   const projectData = [
     {
       title: "Cryptocurrency Finance Price Tracker Web App",
@@ -34,20 +70,26 @@ export const Projects = () => {
     {
       title: "Pokemon Explorer Web App",
       description:
-        "A responsive and visually appealing React.js web app for exploring Pokemons using the PokeAPI.It includes a homepage with search functionality and a detailed view for each Pokemon.",
+        "A responsive and visually appealing React.js web app for exploring Pokemons using the PokeAPI. It includes a homepage with search functionality and a detailed view for each Pokemon.",
       tech: ["React.js", "JavaScript", "ECMAScript 6", "CSS"],
       link: "https://pokemon-git-d42cb1-anideepbhowmick1999creatorgmailcoms-projects.vercel.app/",
     },
   ];
 
   return (
-    <section id="projects" className="projects-section">
-      <RevealOnScroll>
-        <div className="projects-container">
-          <h2 className="projects-title">Featured Projects</h2>
-          <div className="projects-grid">
-            {projectData.map((project, index) => (
-              <div key={index} className="project-card">
+    <section id="projects" className="projects-section" ref={sectionRef}>
+      {/* Background Lottie Animation */}
+      <div className="lottie-bg">
+        <Lottie animationData={codingAnimation} loop={true} />
+      </div>
+
+      {/* Foreground content */}
+      <div className="projects-container">
+        <h2 className="projects-title">✨ Featured Projects</h2>
+        <div className="projects-grid">
+          {projectData.map((project, index) => (
+            <Tilt tiltMaxAngleX={15} tiltMaxAngleY={15} key={index}>
+              <div className="project-card">
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-desc">{project.description}</p>
                 <div className="project-tech">
@@ -66,10 +108,10 @@ export const Projects = () => {
                   View Project →
                 </a>
               </div>
-            ))}
-          </div>
+            </Tilt>
+          ))}
         </div>
-      </RevealOnScroll>
+      </div>
     </section>
   );
 };
