@@ -4,7 +4,6 @@
   height: 100vh;
   display: flex;
   align-items: center;
-  background: #0f172a;
   color: white;
 }
 
@@ -14,15 +13,25 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0; /* Behind everything */
-  pointer-events: none; /* IMPORTANT: so canvas doesn't block clicks */
+  z-index: 0;
+  pointer-events: none;
+}
+
+.home-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.6); /* Dark overlay for readability */
+  z-index: 1;
 }
 
 .home-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  z-index: 2; /* Above canvas */
+  z-index: 2;
   padding: 2rem;
   width: 100%;
   max-width: 1200px;
@@ -31,20 +40,10 @@
   position: relative;
 }
 
-.home-left {
-  flex: 1 1 50%;
-  max-width: 500px;
-}
-
-.gif-animation {
-  width: 100%;
-  max-width: 400px;
-}
-
 .home-right {
-  flex: 1 1 50%;
+  flex: 1 1 100%;
   padding: 1rem;
-  text-align: left;
+  text-align: center;
 }
 
 .home-title {
@@ -60,11 +59,14 @@
   color: #cbd5e1;
   margin-bottom: 2rem;
   line-height: 1.6;
-  max-width: 500px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .home-buttons {
   display: flex;
+  justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
   z-index: 3;
@@ -98,4 +100,14 @@
 .btn-secondary:hover {
   background-color: rgba(59, 130, 246, 0.1);
   transform: scale(1.05);
+}
+.lottie-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.6; /* Adjust for visibility */
 }

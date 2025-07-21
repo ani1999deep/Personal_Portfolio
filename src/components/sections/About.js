@@ -31,21 +31,27 @@ export const About = () => {
     );
   }, []);
 
-  const frontendSkills = ["React", "JavaScript", "ECMAScript 6"];
-  const backendSkills = ["Node.js", "Express.js", "MongoDB"];
-  const otherSkills = [
-    "PLC (CJ2M Series, CP1E)",
-    "HMI (NB Series and RENU-FP2070TN-V2)",
-    "AutoCAD",
-    "Git and GitHub",
+  const productCategories = [
+    "Leather Handbags",
+    "Office Laptop Bags",
+    "Wallets & Card Holders",
+    "Travel & Duffel Bags",
+    "Custom Corporate Gifting",
   ];
-  const subjects = ["Industrial Instrumentation", "Sensors and Transducers"];
+
+  const businessModes = [
+    "Pan India Retail Sales",
+    "Bulk Wholesale for Retailers",
+    "White Label Manufacturing",
+    "Custom Brand Printing",
+    "Global Shipping Available",
+  ];
 
   return (
     <section id="about" className="about-section" ref={sectionRef}>
       <Starfield />
       <div className="about-container fade-in">
-        <h2 className="about-title">About Me</h2>
+        <h2 className="about-title">About UI Kart</h2>
 
         <div className="lottie-wrapper fade-in zoom-on-scroll">
           <Lottie animationData={aboutAnimation} loop={true} />
@@ -60,28 +66,32 @@ export const About = () => {
         >
           <div className="about-card">
             <p className="about-description">
-              Passionate developer with expertise in building scalable web
-              applications and creating innovative solutions.
+              UI Kart is a premium leather brand known for delivering
+              top-quality handcrafted bags and accessories. We blend tradition
+              with innovation to serve both retail customers and wholesale
+              partners across India and beyond. Whether you're shopping for
+              personal style or sourcing for business, UI Kart is your trusted
+              leather destination.
             </p>
 
             <div className="skills-grid">
               <Tilt className="skills-section fade-in" tiltReverse>
-                <h3 className="skills-title">Frontend</h3>
+                <h3 className="skills-title">Product Categories</h3>
                 <div className="skills-tags">
-                  {frontendSkills.map((tech, key) => (
+                  {productCategories.map((item, key) => (
                     <span key={key} className="skill-tag">
-                      {tech}
+                      {item}
                     </span>
                   ))}
                 </div>
               </Tilt>
 
               <Tilt className="skills-section fade-in" tiltReverse>
-                <h3 className="skills-title">Backend</h3>
+                <h3 className="skills-title">Wholesale & Retail</h3>
                 <div className="skills-tags">
-                  {backendSkills.map((tech, key) => (
+                  {businessModes.map((mode, key) => (
                     <span key={key} className="skill-tag">
-                      {tech}
+                      {mode}
                     </span>
                   ))}
                 </div>
@@ -89,88 +99,53 @@ export const About = () => {
             </div>
 
             <Tilt className="skills-section fade-in">
-              <h3 className="skills-title">Other Skills</h3>
-              <div className="skills-tags">
-                {otherSkills.map((skill, key) => (
-                  <span key={key} className="skill-tag">
-                    {skill}
-                  </span>
-                ))}
-              </div>
+              <h3 className="skills-title">Our Mission</h3>
+              <p className="about-description">
+                To empower everyday professionals and style seekers with
+                affordable, luxurious leather products made with precision,
+                love, and responsibility.
+              </p>
             </Tilt>
 
             <Tilt className="skills-section fade-in">
-              <h3 className="skills-title">Subjects</h3>
-              <div className="skills-tags">
-                {subjects.map((subject, key) => (
-                  <span key={key} className="skill-tag">
-                    {subject}
-                  </span>
-                ))}
-              </div>
+              <h3 className="skills-title">Our Vision</h3>
+              <p className="about-description">
+                To be India’s most trusted leather brand across wholesale,
+                retail, and custom manufacturing—driven by quality, value, and
+                innovation.
+              </p>
             </Tilt>
           </div>
         </Tilt>
 
         <div className="info-grid">
           <Tilt className="info-card fade-in">
-            <h3 className="info-title">🏫 Education</h3>
+            <h3 className="info-title">🏢 Our Journey</h3>
             <ul className="info-list">
               <li>
-                <strong>
-                  B.Tech in Applied Electronics and Instrumentation Engineering
-                </strong>{" "}
-                - Future Institute of Engineering and Management (Aug 2017 – Jul
-                2021)
+                <strong>Founded in 2022</strong> — UI Kart began as a local
+                workshop producing handcrafted leather bags in Kolkata.
               </li>
               <li>
-                Relevant Coursework: Digital Electronics, Microprocessors,
-                Control Systems, DBMS, C Programming...
+                By 2024, we expanded into **pan-India retail**, launched our
+                **e-commerce store**, and began working with **corporate gifting
+                clients**.
+              </li>
+              <li>
+                Today, we serve both individual customers and bulk wholesale
+                buyers with world-class quality and service.
               </li>
             </ul>
           </Tilt>
 
           <Tilt className="info-card fade-in">
-            <h3 className="info-title">💼 Work Experience</h3>
-            <div className="info-text">
-              <div>
-                <h4 className="info-role">
-                  Node.js Developer Intern at Excellis IT Pvt. Ltd (July 2024 –
-                  Sept 2024)
-                </h4>
-                <p>
-                  Developed full-stack e-commerce app using React and Node.js
-                  with secure API and MongoDB integration.
-                </p>
-              </div>
-              <div>
-                <h4 className="info-role">
-                  Backend Developer Intern at Specstem (Jan 2023 – July 2024)
-                </h4>
-                <p>
-                  Created server-side systems using Express.js and MongoDB,
-                  improving security and performance.
-                </p>
-              </div>
-              <div>
-                <h4 className="info-role">
-                  React.js Developer at Esolz Technologies (Nov 2022 – May 2023)
-                </h4>
-                <p>
-                  Led dashboard SPA using Redux & APIs, boosting maintainability
-                  and dev speed.
-                </p>
-              </div>
-              <div>
-                <h4 className="info-role">
-                  Service Engineer at Penta Automation (Dec 2021 – June 2022)
-                </h4>
-                <p>
-                  Delivered PLC & HMI systems to clients like Dabur India Ltd,
-                  including AutoCAD and field commissioning.
-                </p>
-              </div>
-            </div>
+            <h3 className="info-title">🌍 Global Outlook</h3>
+            <p className="info-text">
+              With a strong presence in domestic markets, UI Kart now ships to
+              multiple countries and works with private labels for global
+              distribution. We're continuously growing and collaborating with
+              partners worldwide.
+            </p>
           </Tilt>
         </div>
       </div>

@@ -2,7 +2,8 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Tilt from "react-parallax-tilt";
-import coderGif from "../../assets/coder.gif";
+import lottie from "lottie-web";
+import leatherShowcase from "../../assets/leather-showcase.json";
 import "../../css/Home.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -10,7 +11,9 @@ gsap.registerPlugin(ScrollTrigger);
 export const Home = () => {
   const sectionRef = useRef(null);
   const contentRef = useRef(null);
+  const lottieRef = useRef(null);
 
+  // GSAP Scroll Animation
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
@@ -40,70 +43,42 @@ export const Home = () => {
     return () => ctx.revert();
   }, []);
 
+  // Lottie Background Animation
   useEffect(() => {
-    const canvas = document.getElementById("stars-canvas");
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
+    const anim = lottie.loadAnimation({
+      container: lottieRef.current,
+      animationData: leatherShowcase,
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+    });
 
-    const setCanvasSize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-
-    setCanvasSize();
-
-    const stars = Array.from({ length: 100 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      radius: Math.random() * 1.2,
-      speed: Math.random() * 0.5 + 0.2,
-    }));
-
-    function animateStars() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      stars.forEach((star) => {
-        star.y += star.speed;
-        if (star.y > canvas.height) star.y = 0;
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-        ctx.fillStyle = "#ffffff";
-        ctx.fill();
-      });
-      requestAnimationFrame(animateStars);
-    }
-
-    animateStars();
-    window.addEventListener("resize", setCanvasSize);
-
-    return () => window.removeEventListener("resize", setCanvasSize);
+    return () => anim.destroy();
   }, []);
 
   return (
     <section id="home" className="home-section" ref={sectionRef}>
+      <div className="lottie-background" ref={lottieRef} />
       <canvas id="stars-canvas" />
 
-      <div className="home-container" ref={contentRef}>
-        <div className="home-left">
-          <img src={coderGif} alt="Coder" className="gif-animation" />
-        </div>
+      <div className="home-overlay"></div>
 
+      <div className="home-container" ref={contentRef}>
         <div className="home-right">
-          <h1 className="home-title">Hi, I'm Anideep Bhowmick</h1>
+          <h1 className="home-title">Welcome to UI Kart</h1>
           <p className="home-description">
-            I am a full-stack developer with a background in Electronics and
-            Instrumentation Engineering and experience in industrial automation.
-            My expertise combines system-level problem-solving with modern web
-            technologies. I focus on building clean, scalable applications that
-            deliver exceptional performance and user experience. Whether backend
-            or frontend, I create high-performance solutions that bridge
-            industrial systems and software development.
+            UI Kart is your trusted destination for premium leather bags,
+            wallets, and accessories. We merge traditional craftsmanship with
+            modern aesthetics to bring you timeless, high-quality leather goods
+            designed for everyday elegance and durability. Explore our
+            collection and experience luxury that lasts.
           </p>
           <div className="home-buttons">
             <div className="tilt-wrapper">
               <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10}>
                 <div>
-                  <a href="#projects" className="btn btn-primary">
-                    View Projects
+                  <a href="#products" className="btn btn-primary">
+                    Explore Products
                   </a>
                 </div>
               </Tilt>
@@ -112,7 +87,7 @@ export const Home = () => {
               <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10}>
                 <div>
                   <a href="#contact" className="btn btn-secondary">
-                    Contact Me
+                    Contact Us
                   </a>
                 </div>
               </Tilt>

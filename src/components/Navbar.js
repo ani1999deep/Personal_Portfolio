@@ -11,7 +11,7 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
       <div className="container">
         <div className="nav-content">
           <a href="#home" className="logo">
-            anideep<span className="logo-highlight">.tech</span>
+            ui<span className="logo-highlight">kart</span>
           </a>
 
           <div
